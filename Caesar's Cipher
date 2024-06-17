@@ -1,0 +1,25 @@
+def shifrovanie(z, n):
+    s = []
+    for i in range(len(z)):
+        if z[i].isupper():
+            v = alp1.index(z[i].lower())
+            k = alp1[(v + n) % len(alp1)].upper()
+        elif z[i].islower():
+            v = alp1.index(z[i])
+            k = alp1[(v + n) % len(alp1)]
+        s.append(k)
+    return ''.join(s)
+alp1 = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+alp2 = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+q = input().split()
+for i in range(len(q)):
+    z = []
+    t = q[i]
+    for i1 in range(len(q[i])):
+        if q[i][i1] in alp1 or q[i][i1] in alp2:
+            z.append(q[i][i1])
+    n = len(z)
+    h = shifrovanie(z, n)
+    z = ''.join(z)
+    q[i] = q[i].replace(z, h)
+print(*q)
