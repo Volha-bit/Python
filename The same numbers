@@ -1,0 +1,17 @@
+n = int(input())
+cislo = n % 10
+cislo2 = 0
+flag = 0
+counter = 0 
+while n != 0:
+    cislo2 = n % 10 
+    if cislo2 == cislo:
+        counter += 1
+        flag += 1
+    else:
+        flag += 100
+    n //= 10 
+if flag == counter:
+    print('YES')
+else:
+    print('NO')
