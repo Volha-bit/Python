@@ -1,0 +1,11 @@
+n = int(input())
+maxi = 0
+pr_maxi = 0
+for i in range(n):
+    k = int(input())
+    if k > maxi:
+        pr_maxi = maxi
+        maxi = k
+    elif  pr_maxi < k < maxi:
+        pr_maxi = k
+print(maxi, pr_maxi, sep='\n')
