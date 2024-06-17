@@ -1,0 +1,14 @@
+s = []
+d = []
+for i in range(int(input())):
+    s.append(input())
+z = int(input())
+for i in range(z):
+    d.append(input())
+for i in range(len(s)):
+    k = 0
+    for i1 in range(len(d)):
+        if d[i1].lower() in s[i].lower():
+            k += 1
+    if k == z:
+        print(s[i])
